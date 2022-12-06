@@ -227,7 +227,7 @@ int	BinarySearchTree<Type>::height(Node<Type>* node) const {
 	//if root == nullptr return 0;
 	//calculate the height of the all left nodes recursively;
 	//calculate the height of the all right nodes recursively;
-	//find max+1;
+	//compare leftHeight and rightHight, and find Max hight + 1;
 	if (node == nullptr)
 		return 0;
 	int leftHight = 0, rightHeight = 0;
