@@ -158,8 +158,9 @@ int main() {
 			bst.insert(7);
 			bst.insert(10);
 			bst.insert(20);
-			cout << bst.search(6) << endl;		// 1
-			cout << bst.search(999) << endl;	// 0
+			bst.printPreorder();
+			cout << bst.search(20) << endl;		// 1
+			cout << bst.search(10) << endl;	// 0
 			break;
 		}
 		case 10: {

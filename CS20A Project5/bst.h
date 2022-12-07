@@ -183,7 +183,6 @@ void BinarySearchTree<Type>::inorder(Node<Type>* node, std::function<void(Node<T
 	inorder(node->left, proc);
 	proc(node);
 	inorder(node->right, proc);
-
 }
 
 template<typename Type>
@@ -220,9 +219,14 @@ Node<Type>* BinarySearchTree<Type>::insert(Node<Type>* node, Type item) {
 // BinarySearchTree<Type>::search recursively searches the tree for item.
 template<typename Type>
 bool BinarySearchTree<Type>::search(Node<Type>* node, Type item) const {
-
-	//********* TODO **********
-	return false;
+	if (node == nullptr)
+		return false;
+	if (item == node->item)
+		return true;
+	if (item < node->item)
+		search(node->left, item);
+	else
+		search(node->right, item);
 }
 
 // BinarySearchTree<Type>::height
