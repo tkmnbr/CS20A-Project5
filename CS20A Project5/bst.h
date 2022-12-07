@@ -188,9 +188,11 @@ void BinarySearchTree<Type>::inorder(Node<Type>* node, std::function<void(Node<T
 
 template<typename Type>
 void BinarySearchTree<Type>::postorder(Node<Type>* node, std::function<void(Node<Type>*)> proc) {
-	
-	//********* TODO **********
-
+	if (node == nullptr)
+		return;
+	postorder(node->left, proc);
+	postorder(node->right, proc);
+	proc(node);
 }
 template<typename Type>
 void BinarySearchTree<Type>::preorder(Node<Type>* node, std::function<void(Node<Type>*)> proc) {
