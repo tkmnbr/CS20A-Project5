@@ -206,8 +206,9 @@ Node<Type>* BinarySearchTree<Type>::insert(Node<Type>* node, Type item) {
 		return new Node<Type>(item, nullptr, nullptr);
 	if (item < node->item)
 		node->left = insert(node->left, item);
-	else
+	else if (item > node->item)
 		node->right = insert(node->right, item);
+	else return node;
 	return node;
 }
 
