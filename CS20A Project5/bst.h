@@ -194,8 +194,11 @@ void BinarySearchTree<Type>::postorder(Node<Type>* node, std::function<void(Node
 }
 template<typename Type>
 void BinarySearchTree<Type>::preorder(Node<Type>* node, std::function<void(Node<Type>*)> proc) {
-	
-	//********* TODO **********
+	if (node == nullptr)
+		return;
+	proc(node);
+	preorder(node->left, proc);
+	preorder(node->right, proc);
 }
 
 // BinarySearchTree::insert recursively inserts into the BST according 
