@@ -281,9 +281,14 @@ Node<Type>* BinarySearchTree<Type>::max(Node<Type>* node) const {
 //		traverse left
 template<typename Type>
 void BinarySearchTree<Type>::printTree(Node<Type>* node, int space) const {
-
-	//********* TODO **********
-	
+	if (node == nullptr)
+		return;
+	printTree(node->right, space + 5);
+	for (int i = 0; i < space; i++)
+		std::cout << " ";
+	std::cout << node->item;
+	std::cout << "\n";
+	printTree(node->left, space + 5);
 }
 
 

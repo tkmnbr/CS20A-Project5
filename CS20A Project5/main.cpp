@@ -160,7 +160,7 @@ int main() {
 			bst.insert(20);
 			bst.printPreorder();
 			cout << bst.search(20) << endl;		// 1
-			cout << bst.search(10) << endl;	// 0
+			cout << bst.search(999) << endl;	// 0
 			break;
 		}
 		case 10: {
@@ -185,14 +185,15 @@ int main() {
 			bst.printPreorder();			// 8 6 3 7 13 10 20 22
 			cout << endl;
 
-			//					//				22
+			//					//	   			22
 			//					//			20
 			//					//		13
 			bst.printTree();	//			10
-								//	8
+								//	8   
 								//			7	
 								//		6
 								//			3
+								//                     
 			break;
 		}
 		case 11: {
