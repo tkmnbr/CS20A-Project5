@@ -316,11 +316,43 @@ void BinarySearchTree<Type>::printTree(Node<Type>* node, int space) const {
 // 
 // It takes a bit to wrap your head around this, use the 6 steps, draw lots of pictures.
 // 
+
+//delete the node which matches given item, and return new node.
 template<typename Type>
 Node<Type>* BinarySearchTree<Type>::remove(Node<Type>* node, Type item) {
+	if (node == nullptr)
+		return node;
+	if (item < node->item)
+		node->left = remove(node->left, item);
+	else if (item > node->item)
+		node->right = remove(node->right, item);
+	else {
+		if (node->right == nullptr and node->left == nullptr)
+			return nullptr;
+		else if (node->left == nullptr) {
+			Node<Type>* temp = new Node<Type>;
+			temp = node->right;
+			delete node;
+			return temp;
+		}
+		else if(node->right == nullptr){
+			Node<Type>* temp = new Node<Type>;
+			temp = node->left;
+			delete node;
+			return temp;
+		}
+		/*Node<Type>* temp = new Node<Type>;
+		temp = max(node->left);
+		node->item = temp->item;
+		node->left = remove(node->left, node->item);	*/
 
-	//********* TODO **********
-	return nullptr;
+		//using right subtree
+		Node<Type>* temp = new Node<Type>;
+		temp = min(node->right);
+		node->item = temp->item;
+		node->right = remove(node->right, node->item);
+	}
+	return node;
 }
 
 

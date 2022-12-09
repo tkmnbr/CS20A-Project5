@@ -207,7 +207,7 @@ int main() {
 			bst.insert(20);
 			bst.insert(22);
 
-			bst.remove(20); // This implementation uses the right sub tree
+			bst.remove(8); // This implementation uses the right sub tree
 							// Your tree will appear slightly differently if you
 							// use the left subtree.
 
@@ -272,7 +272,7 @@ int main() {
 			break;
 		}
 		default:
-			// Runtime test of your BST implementation and several stl containers.  
+			// Runtime test of your BST im9plementation and several stl containers.  
 			int test_size = 1000;
 			test_insert(test_size); //Must have implemented bst::insert
 			test_search(test_size); //Must have implemented bst::search
